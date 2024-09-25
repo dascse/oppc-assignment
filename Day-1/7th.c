@@ -4,7 +4,7 @@
 struct Student {
     char name[50];
     int rollNumber;
-    float marks[5];   // Array to store marks for 5 subjects
+    float marks[5];  
     float total;
     float average;
     char grade;
@@ -13,20 +13,18 @@ struct Student {
 int main() {
     int n;
 
-    // Input the number of students
     printf("Enter the number of students: ");
     scanf("%d", &n);
 
-    struct Student students[50];  // Array to store details of up to 50 students
+    struct Student students[50];  
 
-    // Input details for each student
     for (int i = 0; i < n; i++) {
         printf("\nEnter details of student %d\n", i + 1);
         
         printf("Enter name: ");
         getchar(); // to consume the newline character
         fgets(students[i].name, sizeof(students[i].name), stdin);
-        students[i].name[strcspn(students[i].name, "\n")] = 0;  // Remove newline from string
+        students[i].name[strcspn(students[i].name, "\n")] = 0;  
         
  printf("Enter roll number: ");
         scanf("%d", &students[i].rollNumber);
@@ -40,10 +38,10 @@ int main() {
             students[i].total += students[i].marks[j];
         }
 
-        // Calculate the average
+    
         students[i].average = students[i].total / 5.0;
 
-        // Determine the grade based on average
+
         if (students[i].average >= 90) {
  students[i].grade = 'A';
         } else if (students[i].average >= 80) {
@@ -57,7 +55,7 @@ int main() {
         }
     }
 
-    // Display the results for each student
+    
     printf("\nResults:\n");
     for (int i = 0; i < n; i++) {
         printf("\nStudent %d\n", i + 1);
