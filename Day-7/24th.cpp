@@ -1,7 +1,7 @@
 #include <iostream>
-#include <stdexcept> // For standard exceptions
+#include <stdexcept>  
 
-// Function that performs division and throws exception if divisor is zero
+ 
 double divide(double numerator, double denominator) {
     if (denominator == 0) {
         throw std::invalid_argument("Error: Division by zero is not allowed.");
@@ -19,10 +19,10 @@ int main() {
     std::cin >> denom;
 
     try {
-        double result = divide(num, denom); // Trying to perform division
+        double result = divide(num, denom);  
         std::cout << "Result: " << result << std::endl;
     } catch (const std::invalid_argument& e) {
-        // Catching the exception if denominator is zero
+        
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
