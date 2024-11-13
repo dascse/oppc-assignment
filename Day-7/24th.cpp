@@ -1,31 +1,34 @@
-#include <iostream>
-#include <stdexcept>  
-
  
-double divide(double numerator, double denominator) {
-    if (denominator == 0) {
-        throw std::invalid_argument("Error: Division by zero is not allowed.");
-    }
-    return numerator / denominator;
-}
 
-int main() {
-    double num, denom;
+#include <iostream>
+#include <stdexcept>
+using namespace std;
 
-    std::cout << "Enter numerator: ";
-    std::cin >> num;
+int main()
+{
 
-    std::cout << "Enter denominator: ";
-    std::cin >> denom;
-
+    // try block
     try {
-        double result = divide(num, denom);  
-        std::cout << "Result: " << result << std::endl;
-    } catch (const std::invalid_argument& e) {
-        
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        int numerator = 10;
+        int denominator = 0;
+        int res;
+
+    
+         
+        if (denominator == 0) {
+            throw runtime_error(
+                "Division by zero not allowed!");
+        }
+ 
+        res = numerator / denominator;
+        //[printing result after division
+        cout << "Result after division: " << res << endl;
+    }
+    
+    catch (const exception& e) {
+        // print the exception
+        cout << "Exception " << e.what() << endl;
     }
 
-    std::cout << "Program continues running..." << std::endl;
     return 0;
 }
